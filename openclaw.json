@@ -1,10 +1,10 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-03-28T01:40:07.932Z"
+    "lastTouchedAt": "2026-04-01T12:24:33.864Z"
   },
   "wizard": {
-    "lastRunAt": "2026-03-26T13:46:07.195Z",
+    "lastRunAt": "2026-04-01T12:24:33.703Z",
     "lastRunVersion": "2026.3.24",
     "lastRunCommand": "configure",
     "lastRunMode": "local"
@@ -25,7 +25,7 @@
     "mode": "merge",
     "providers": {
       "zai": {
-        "baseUrl": "https://api.z.ai/api/paas/v4",
+        "baseUrl": "https://open.bigmodel.cn/api/coding/paas/v4",
         "api": "openai-completions",
         "models": [
           {
@@ -217,10 +217,13 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "minimax-portal/MiniMax-M2.7",
+        "primary": "zai/glm-5",
         "fallbacks": [
-          "zai/glm-5",
-          "minimax-portal/MiniMax-M2.7-highspeed"
+          "minimax-portal/MiniMax-M2.7",
+          "minimax-portal/MiniMax-M2.7-highspeed",
+          "zai/glm-4.6v",
+          "zai/glm-4.7",
+          "zai/glm-5-turbo"
         ]
       },
       "models": {
@@ -232,7 +235,10 @@
         },
         "minimax-portal/MiniMax-M2.7-highspeed": {
           "alias": "minimax-m2.7-highspeed"
-        }
+        },
+        "zai/glm-4.6v": {},
+        "zai/glm-4.7": {},
+        "zai/glm-5-turbo": {}
       },
       "workspace": "C:\\Users\\张云亮\\.openclaw\\workspace"
     },
