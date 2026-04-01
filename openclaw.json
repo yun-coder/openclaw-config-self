@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-04-01T12:24:33.864Z"
+    "lastTouchedAt": "2026-04-01T13:24:04.727Z"
   },
   "wizard": {
     "lastRunAt": "2026-04-01T12:24:33.703Z",
@@ -240,7 +240,13 @@
         "zai/glm-4.7": {},
         "zai/glm-5-turbo": {}
       },
-      "workspace": "C:\\Users\\张云亮\\.openclaw\\workspace"
+      "workspace": "C:\\Users\\张云亮\\.openclaw\\workspace",
+      "compaction": {
+        "mode": "safeguard",
+        "model": "zai/glm-4.7-flash",
+        "identifierPolicy": "strict",
+        "instructions": "生成摘要时包含：1) 讨论的主要话题 2) 做出的决策 3) 待办事项 4) 关键文件路径 5) 当前工作状态"
+      }
     },
     "list": [
       {
@@ -250,31 +256,51 @@
         "id": "product-worker",
         "name": "product-worker",
         "workspace": "C:\\Users\\张云亮\\.openclaw\\agents\\product-worker\\workspace",
-        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\product-worker\\agent"
+        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\product-worker\\agent",
+        "model": {
+          "primary": "zai/glm-4.7",
+          "fallbacks": ["zai/glm-5", "zai/glm-4.7-flash"]
+        }
       },
       {
         "id": "ui-worker",
         "name": "ui-worker",
         "workspace": "C:\\Users\\张云亮\\.openclaw\\agents\\ui-worker\\workspace",
-        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\ui-worker\\agent"
+        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\ui-worker\\agent",
+        "model": {
+          "primary": "zai/glm-4.6v",
+          "fallbacks": ["zai/glm-5", "zai/glm-4.7"]
+        }
       },
       {
         "id": "web-worker",
         "name": "web-worker",
         "workspace": "C:\\Users\\张云亮\\.openclaw\\agents\\web-worker\\workspace",
-        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\web-worker\\agent"
+        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\web-worker\\agent",
+        "model": {
+          "primary": "zai/glm-5",
+          "fallbacks": ["zai/glm-4.7", "minimax-portal/MiniMax-M2.7"]
+        }
       },
       {
         "id": "qa-worker",
         "name": "qa-worker",
         "workspace": "C:\\Users\\张云亮\\.openclaw\\agents\\qa-worker\\workspace",
-        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\qa-worker\\agent"
+        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\qa-worker\\agent",
+        "model": {
+          "primary": "zai/glm-4.7-flash",
+          "fallbacks": ["zai/glm-4.7", "zai/glm-5"]
+        }
       },
       {
         "id": "app-worker",
         "name": "app-worker",
         "workspace": "C:\\Users\\张云亮\\.openclaw\\agents\\app-worker\\workspace",
-        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\app-worker\\agent"
+        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\app-worker\\agent",
+        "model": {
+          "primary": "zai/glm-5",
+          "fallbacks": ["zai/glm-4.7", "minimax-portal/MiniMax-M2.7"]
+        }
       }
     ]
   },
@@ -339,6 +365,22 @@
   },
   "session": {
     "dmScope": "per-channel-peer"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "session-memory": {
+          "enabled": true
+        },
+        "cost-alert": {
+          "enabled": true
+        },
+        "tool-permission-check": {
+          "enabled": true
+        }
+      }
+    }
   },
   "channels": {
     "feishu": {
@@ -414,6 +456,32 @@
         "enabled": true
       },
       "minimax": {
+        "enabled": true
+      },
+      "github": {
+        "enabled": true
+      },
+      "weather": {
+        "enabled": true
+      },
+      "summarize": {
+        "enabled": true
+      }
+    }
+  },
+  "skills": {
+    "mode": "merge",
+    "entries": {
+      "github": {
+        "enabled": true
+      },
+      "weather": {
+        "enabled": true
+      },
+      "summarize": {
+        "enabled": true
+      },
+      "skill-creator": {
         "enabled": true
       }
     }
