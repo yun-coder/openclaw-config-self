@@ -245,7 +245,6 @@
         "mode": "safeguard",
         "model": "zai/glm-4.7-flash",
         "identifierPolicy": "strict",
-        "instructions": "生成摘要时包含：1) 讨论的主要话题 2) 做出的决策 3) 待办事项 4) 关键文件路径 5) 当前工作状态"
       }
     },
     "list": [
@@ -457,20 +456,10 @@
       },
       "minimax": {
         "enabled": true
-      },
-      "github": {
-        "enabled": true
-      },
-      "weather": {
-        "enabled": true
-      },
-      "summarize": {
-        "enabled": true
       }
     }
   },
   "skills": {
-    "mode": "merge",
     "entries": {
       "github": {
         "enabled": true
