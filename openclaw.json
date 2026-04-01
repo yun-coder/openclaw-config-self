@@ -1,0 +1,415 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.24",
+    "lastTouchedAt": "2026-03-28T01:40:07.932Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-26T13:46:07.195Z",
+    "lastRunVersion": "2026.3.24",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "zai:default": {
+        "provider": "zai",
+        "mode": "api_key"
+      },
+      "minimax-portal:default": {
+        "provider": "minimax-portal",
+        "mode": "oauth"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "zai": {
+        "baseUrl": "https://api.z.ai/api/paas/v4",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "glm-5",
+            "name": "GLM-5",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 1,
+              "output": 3.2,
+              "cacheRead": 0.2,
+              "cacheWrite": 0
+            },
+            "contextWindow": 202800,
+            "maxTokens": 131100
+          },
+          {
+            "id": "glm-5-turbo",
+            "name": "GLM-5 Turbo",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 1.2,
+              "output": 4,
+              "cacheRead": 0.24,
+              "cacheWrite": 0
+            },
+            "contextWindow": 202800,
+            "maxTokens": 131100
+          },
+          {
+            "id": "glm-4.7",
+            "name": "GLM-4.7",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.6,
+              "output": 2.2,
+              "cacheRead": 0.11,
+              "cacheWrite": 0
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          },
+          {
+            "id": "glm-4.7-flash",
+            "name": "GLM-4.7 Flash",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.07,
+              "output": 0.4,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 131072
+          },
+          {
+            "id": "glm-4.7-flashx",
+            "name": "GLM-4.7 FlashX",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.06,
+              "output": 0.4,
+              "cacheRead": 0.01,
+              "cacheWrite": 0
+            },
+            "contextWindow": 200000,
+            "maxTokens": 128000
+          },
+          {
+            "id": "glm-4.6",
+            "name": "GLM-4.6",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.6,
+              "output": 2.2,
+              "cacheRead": 0.11,
+              "cacheWrite": 0
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          },
+          {
+            "id": "glm-4.6v",
+            "name": "GLM-4.6V",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 0.9,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 128000,
+            "maxTokens": 32768
+          },
+          {
+            "id": "glm-4.5",
+            "name": "GLM-4.5",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.6,
+              "output": 2.2,
+              "cacheRead": 0.11,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 98304
+          },
+          {
+            "id": "glm-4.5-air",
+            "name": "GLM-4.5 Air",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.2,
+              "output": 1.1,
+              "cacheRead": 0.03,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 98304
+          },
+          {
+            "id": "glm-4.5-flash",
+            "name": "GLM-4.5 Flash",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 131072,
+            "maxTokens": 98304
+          },
+          {
+            "id": "glm-4.5v",
+            "name": "GLM-4.5V",
+            "reasoning": true,
+            "input": [
+              "text",
+              "image"
+            ],
+            "cost": {
+              "input": 0.6,
+              "output": 1.8,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 64000,
+            "maxTokens": 16384
+          }
+        ]
+      },
+      "minimax-portal": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "models": []
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "minimax-portal/MiniMax-M2.7",
+        "fallbacks": [
+          "zai/glm-5",
+          "minimax-portal/MiniMax-M2.7-highspeed"
+        ]
+      },
+      "models": {
+        "zai/glm-5": {
+          "alias": "GLM"
+        },
+        "minimax-portal/MiniMax-M2.7": {
+          "alias": "minimax-m2.7"
+        },
+        "minimax-portal/MiniMax-M2.7-highspeed": {
+          "alias": "minimax-m2.7-highspeed"
+        }
+      },
+      "workspace": "C:\\Users\\张云亮\\.openclaw\\workspace"
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "product-worker",
+        "name": "product-worker",
+        "workspace": "C:\\Users\\张云亮\\.openclaw\\agents\\product-worker\\workspace",
+        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\product-worker\\agent"
+      },
+      {
+        "id": "ui-worker",
+        "name": "ui-worker",
+        "workspace": "C:\\Users\\张云亮\\.openclaw\\agents\\ui-worker\\workspace",
+        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\ui-worker\\agent"
+      },
+      {
+        "id": "web-worker",
+        "name": "web-worker",
+        "workspace": "C:\\Users\\张云亮\\.openclaw\\agents\\web-worker\\workspace",
+        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\web-worker\\agent"
+      },
+      {
+        "id": "qa-worker",
+        "name": "qa-worker",
+        "workspace": "C:\\Users\\张云亮\\.openclaw\\agents\\qa-worker\\workspace",
+        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\qa-worker\\agent"
+      },
+      {
+        "id": "app-worker",
+        "name": "app-worker",
+        "workspace": "C:\\Users\\张云亮\\.openclaw\\agents\\app-worker\\workspace",
+        "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\app-worker\\agent"
+      }
+    ]
+  },
+  "tools": {
+    "profile": "coding"
+  },
+  "bindings": [
+    {
+      "type": "route",
+      "agentId": "product-worker",
+      "match": {
+        "channel": "feishu",
+        "accountId": "product-worker"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "ui-worker",
+      "match": {
+        "channel": "feishu",
+        "accountId": "ui-worker"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "web-worker",
+      "match": {
+        "channel": "feishu",
+        "accountId": "web-worker"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "qa-worker",
+      "match": {
+        "channel": "feishu",
+        "accountId": "qa-worker"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "app-worker",
+      "match": {
+        "channel": "feishu",
+        "accountId": "app-worker"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "main",
+      "match": {
+        "channel": "feishu",
+        "accountId": "main"
+      }
+    }
+  ],
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "connectionMode": "websocket",
+      "domain": "feishu",
+      "groupPolicy": "allowlist",
+      "groupAllowFrom": [
+        "oc_af9134db25975903aa234741c4d7ad5d"
+      ],
+      "defaultAccount": "main",
+      "accounts": {
+        "main": {
+          "appId": "cli_a9316eb225789cb1",
+          "appSecret": "kSWlB1iQNyGsiCHjgfe61fe7CLYYPvwa",
+          "name": "打工人首领"
+        },
+        "product-worker": {
+          "appId": "cli_a94a050cd5f69cbd",
+          "appSecret": "zmXbTGzOyJwNzzYVnqqTzgU1ryY8EHQX",
+          "name": "产品打工人"
+        },
+        "ui-worker": {
+          "appId": "cli_a94a06b2ec389cb1",
+          "appSecret": "tvWVCYOiJlhOg1pI76frgdVLezM1IBHV",
+          "name": "UI设计打工人"
+        },
+        "web-worker": {
+          "appId": "cli_a94a6c9e68385cc2",
+          "appSecret": "1zN505cRZygbPDP9Y0wWreAtPLQIjdlh",
+          "name": "web开发打工人"
+        },
+        "qa-worker": {
+          "appId": "cli_a94a6f49c439dcb0",
+          "appSecret": "g00xUmDI935Y5B74A1HX6ffjmVcsL0vq",
+          "name": "QA测试打工人"
+        },
+        "app-worker": {
+          "appId": "cli_a94a6ebb48b89cd2",
+          "appSecret": "rEvPr3vStZsDS73k2xf0wga6qnzMvQzf",
+          "name": "app开发打工人"
+        }
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "32e92eb26260327151f2ec184abac52aeb69bbde7fdc32b1"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send"
+      ]
+    }
+  },
+  "plugins": {
+    "entries": {
+      "feishu": {
+        "enabled": true
+      },
+      "minimax": {
+        "enabled": true
+      }
+    }
+  }
+}

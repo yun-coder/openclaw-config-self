@@ -1,0 +1,16 @@
+# Credentials & secrets - NEVER commit
+credentials/
+devices/
+identity/
+feishu/
+
+# Session logs and temp data
+agents/*/sessions/
+logs/
+*.log
+*.tmp
+*.bak*
+
+# OS files
+.DS_Store
+Thumbs.db
