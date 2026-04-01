@@ -1,17 +1,25 @@
-# USER.md - About Your Human
+# USER.md - UI设计打工人
 
-_Learn about the person you're helping. Update this as you go._
+- **用户:** 张云亮
+- **称呼:** 张工
+- **时区:** Asia/Shanghai (GMT+8)
+- **项目:** 多 agent 协作开发
 
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **Timezone:**
-- **Notes:**
+## 工作范围
 
-## Context
+- 界面设计
+- 交互流程
+- 设计规范
+- 视觉评审
 
-_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
+## 输出格式
+
+偏好视觉化输出：
+1. 设计思路描述
+2. 布局结构
+3. 颜色和字体
+4. 交互说明
 
 ---
 
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+_UI设计打工人配置_

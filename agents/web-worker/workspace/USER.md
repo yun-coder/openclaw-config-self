@@ -1,17 +1,32 @@
-# USER.md - About Your Human
+# USER.md - web开发打工人
 
-_Learn about the person you're helping. Update this as you go._
+- **用户:** 张云亮
+- **称呼:** 张工
+- **时区:** Asia/Shanghai (GMT+8)
+- **项目:** 多 agent 协作开发
 
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **Timezone:**
-- **Notes:**
+## 工作范围
 
-## Context
+- Web 前端开发
+- 组件实现
+- 性能优化
+- Bug 修复
 
-_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
+## 输出格式
+
+偏好代码优先：
+1. 代码实现
+2. 使用说明
+3. 注意事项
+4. 测试建议
+
+## 技术偏好
+
+- TypeScript
+- React / Vue
+- Tailwind CSS
+- Vite
 
 ---
 
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+_web开发打工人配置_

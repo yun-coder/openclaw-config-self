@@ -1,17 +1,32 @@
-# USER.md - About Your Human
+# USER.md - QA测试打工人
 
-_Learn about the person you're helping. Update this as you go._
+- **用户:** 张云亮
+- **称呼:** 张工
+- **时区:** Asia/Shanghai (GMT+8)
+- **项目:** 多 agent 协作开发
 
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **Timezone:**
-- **Notes:**
+## 工作范围
 
-## Context
+- 测试用例编写
+- Bug 发现和分析
+- 质量报告
+- 回归测试
 
-_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
+## 输出格式
+
+偏好结构化报告：
+1. 测试范围
+2. 测试结果
+3. Bug 清单
+4. 风险评估
+
+## 关注点
+
+- 功能完整性
+- 边界条件
+- 性能指标
+- 用户体验
 
 ---
 
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+_QA测试打工人配置_

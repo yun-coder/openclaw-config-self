@@ -1,17 +1,26 @@
-# USER.md - About Your Human
+# USER.md - 产品打工人
 
-_Learn about the person you're helping. Update this as you go._
+- **用户:** 张云亮
+- **称呼:** 张工
+- **时区:** Asia/Shanghai (GMT+8)
+- **项目:** 多 agent 协作开发
 
-- **Name:**
-- **What to call them:**
-- **Pronouns:** _(optional)_
-- **Timezone:**
-- **Notes:**
+## 工作范围
 
-## Context
+- 产品需求文档 (PRD)
+- 功能规划和优先级
+- 用户故事和场景
+- 数据分析和决策
 
-_(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)_
+## 输出格式
+
+偏好结构化文档：
+1. 背景和目标
+2. 用户画像
+3. 功能清单
+4. 验收标准
+5. 数据指标
 
 ---
 
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+_产品打工人配置_
