@@ -1,10 +1,10 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-04-01T13:24:04.727Z"
+    "lastTouchedAt": "2026-04-02T10:48:10.486Z"
   },
   "wizard": {
-    "lastRunAt": "2026-04-01T12:24:33.703Z",
+    "lastRunAt": "2026-04-02T05:40:03.794Z",
     "lastRunVersion": "2026.3.24",
     "lastRunCommand": "configure",
     "lastRunMode": "local"
@@ -243,8 +243,8 @@
       "workspace": "C:\\Users\\张云亮\\.openclaw\\workspace",
       "compaction": {
         "mode": "safeguard",
-        "model": "zai/glm-4.7-flash",
         "identifierPolicy": "strict",
+        "model": "zai/glm-4.7-flash"
       }
     },
     "list": [
@@ -258,7 +258,10 @@
         "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\product-worker\\agent",
         "model": {
           "primary": "zai/glm-4.7",
-          "fallbacks": ["zai/glm-5", "zai/glm-4.7-flash"]
+          "fallbacks": [
+            "zai/glm-5",
+            "zai/glm-4.7-flash"
+          ]
         }
       },
       {
@@ -268,7 +271,10 @@
         "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\ui-worker\\agent",
         "model": {
           "primary": "zai/glm-4.6v",
-          "fallbacks": ["zai/glm-5", "zai/glm-4.7"]
+          "fallbacks": [
+            "zai/glm-5",
+            "zai/glm-4.7"
+          ]
         }
       },
       {
@@ -278,7 +284,10 @@
         "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\web-worker\\agent",
         "model": {
           "primary": "zai/glm-5",
-          "fallbacks": ["zai/glm-4.7", "minimax-portal/MiniMax-M2.7"]
+          "fallbacks": [
+            "zai/glm-4.7",
+            "minimax-portal/MiniMax-M2.7"
+          ]
         }
       },
       {
@@ -288,7 +297,10 @@
         "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\qa-worker\\agent",
         "model": {
           "primary": "zai/glm-4.7-flash",
-          "fallbacks": ["zai/glm-4.7", "zai/glm-5"]
+          "fallbacks": [
+            "zai/glm-4.7",
+            "zai/glm-5"
+          ]
         }
       },
       {
@@ -298,7 +310,10 @@
         "agentDir": "C:\\Users\\张云亮\\.openclaw\\agents\\app-worker\\agent",
         "model": {
           "primary": "zai/glm-5",
-          "fallbacks": ["zai/glm-4.7", "minimax-portal/MiniMax-M2.7"]
+          "fallbacks": [
+            "zai/glm-4.7",
+            "minimax-portal/MiniMax-M2.7"
+          ]
         }
       }
     ]
@@ -307,6 +322,46 @@
     "profile": "coding"
   },
   "bindings": [
+    {
+      "type": "route",
+      "agentId": "main",
+      "match": {
+        "channel": "telegram",
+        "accountId": "main"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "product-worker",
+      "match": {
+        "channel": "telegram",
+        "accountId": "product-worker"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "ui-worker",
+      "match": {
+        "channel": "telegram",
+        "accountId": "ui-worker"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "web-worker",
+      "match": {
+        "channel": "telegram",
+        "accountId": "web-worker"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "qa-worker",
+      "match": {
+        "channel": "telegram",
+        "accountId": "qa-worker"
+      }
+    },
     {
       "type": "route",
       "agentId": "product-worker",
@@ -382,8 +437,65 @@
     }
   },
   "channels": {
-    "feishu": {
+    "telegram": {
       "enabled": true,
+      "dmPolicy": "pairing",
+      "groups": {
+        "*": {
+          "requireMention": false
+        }
+      },
+      "groupPolicy": "open",
+      "streaming": "partial",
+      "accounts": {
+        "main": {
+          "name": "打工人首领",
+          "dmPolicy": "pairing",
+          "botToken": "8583683763:AAGcxpfgEQkbSm5dc_qmzpwIyjbMnrebVd4",
+          "groupPolicy": "open",
+          "streaming": "partial"
+        },
+        "product-worker": {
+          "name": "产品打工人",
+          "dmPolicy": "pairing",
+          "botToken": "8784647213:AAF83hSc81wXFhaII-VtiejQ6wGaJwkxJXw",
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "ui-worker": {
+          "name": "UI打工人",
+          "dmPolicy": "pairing",
+          "botToken": "8553538714:AAHZRRBOE80SlVrcJTBQlhjBpXh1uspxE2s",
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "web-worker": {
+          "name": "web打工人",
+          "dmPolicy": "pairing",
+          "botToken": "8778094076:AAFU8dlhpUMArrPWG_SMucoMvVESLNefahU",
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "qa-worker": {
+          "name": "qa打工人",
+          "dmPolicy": "pairing",
+          "botToken": "8794689585:AAG8KdwZBAoA5mDlZ1eeCM124tbCywKF14k",
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        },
+        "app-worker": {
+          "name": "app打工人",
+          "enabled": false,
+          "dmPolicy": "pairing",
+          "botToken": "YOUR_APP_BOT_TOKEN",
+          "groupPolicy": "allowlist",
+          "streaming": "partial"
+        }
+      },
+      "defaultAccount": "main"
+    },
+    "feishu": {
+      "enabled": false,
       "connectionMode": "websocket",
       "domain": "feishu",
       "groupPolicy": "allowlist",
@@ -449,16 +561,6 @@
       ]
     }
   },
-  "plugins": {
-    "entries": {
-      "feishu": {
-        "enabled": true
-      },
-      "minimax": {
-        "enabled": true
-      }
-    }
-  },
   "skills": {
     "entries": {
       "github": {
@@ -471,6 +573,16 @@
         "enabled": true
       },
       "skill-creator": {
+        "enabled": true
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "feishu": {
+        "enabled": true
+      },
+      "minimax": {
         "enabled": true
       }
     }
