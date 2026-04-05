@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-04-02T10:48:10.486Z"
+    "lastTouchedAt": "2026-04-05T23:30:11.547Z"
   },
   "wizard": {
     "lastRunAt": "2026-04-02T05:40:03.794Z",
@@ -319,7 +319,10 @@
     ]
   },
   "tools": {
-    "profile": "coding"
+    "profile": "coding",
+    "sessions": {
+      "visibility": "all"
+    }
   },
   "bindings": [
     {
@@ -360,6 +363,14 @@
       "match": {
         "channel": "telegram",
         "accountId": "qa-worker"
+      }
+    },
+    {
+      "type": "route",
+      "agentId": "app-worker",
+      "match": {
+        "channel": "telegram",
+        "accountId": "app-worker"
       }
     },
     {
@@ -485,9 +496,9 @@
         },
         "app-worker": {
           "name": "app打工人",
-          "enabled": false,
+          "enabled": true,
           "dmPolicy": "pairing",
-          "botToken": "YOUR_APP_BOT_TOKEN",
+          "botToken": "8784099976:AAEz-vz0byNZ90S2SqrtKZCxNjgR0t7Ue9w",
           "groupPolicy": "allowlist",
           "streaming": "partial"
         }

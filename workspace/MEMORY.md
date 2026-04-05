@@ -4,7 +4,9 @@
 
 ---
 
-## 用户信息
+## 用户偏好
+
+- **配置推送**: 不需要询问，直接推送配置到 GitHub
 
 - **名字**: 张云亮 (Yun-Liang Zhang)
 - **GitHub**: yun-coder
